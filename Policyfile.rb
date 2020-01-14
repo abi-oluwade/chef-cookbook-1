@@ -12,5 +12,8 @@ default_source :supermarket
 # run_list: chef-client will run these recipes in the order specified.
 run_list 'node_sample::default'
 
+# cookbook 'nodejs', '= 5.0.0', :supermarket
+# cookbook 'apt', '~> 7.2.0', :supermarket
+
 # Specify a custom source for a single cookbook:
 cookbook 'node_sample', path: '.'
