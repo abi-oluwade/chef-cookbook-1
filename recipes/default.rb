@@ -8,28 +8,28 @@
 include_recipe 'nodejs'
 include_recipe 'apt'
 
-#npm installs
-# nodejs_npm 'pm2'
-
-#packages apt-get
 apt_update
-# package 'nginx' do
-#   action :install
-# end
-package 'nginx'
-package 'npm'
+
+#packages
+package 'nginx' do
+  action :install
+end
+
+package 'npm' do
+  action :install
+end
 
 nodejs_npm 'pm2'
 
 #services
-
-service 'enable nginx' do
-  action :enable
-end
-#
 # service 'start nginx' do
 #   action :start
 # end
+
+# service 'enable nginx' do
+#   action :enable
+# end
+
 
 
 
