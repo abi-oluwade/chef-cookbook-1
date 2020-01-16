@@ -20,14 +20,6 @@ describe 'node_sample::default' do
       expect(chef_run).to install_package 'nginx'
     end
 
-    it 'enables nginx service' do
-      expect(chef_run).to enable_service 'nginx'
-    end
-
-    it 'starts nginx service' do
-      expect(chef_run).to start_service 'nginx'
-    end
-
     it 'installs nodejs service from a recipe' do
       expect(chef_run).to install_package 'nodejs'
     end
@@ -36,6 +28,10 @@ describe 'node_sample::default' do
       expect(chef_run).to install_nodejs_npm 'pm2'
     end
 
+    it 'should create a proxy.conf template in /etc/nginx/site-avaliable' do
+      expect(chef_run).to create_template '/etc/nginx/site-avaliable/proxy.conf'
+
+    end
     # it 'should import apt' do
     #   expect(chef_run).to install_package 'apt'
     # end

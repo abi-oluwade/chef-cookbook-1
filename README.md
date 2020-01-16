@@ -32,3 +32,6 @@ policy file is where we import cookbooks from the 'supermarket'
 cookbook 'nodejs', '~> 6.0.0', :supermarket
 
 ````
+Chef commands:
+- chef generate cookbook <name_cookbook>
+- chef generate template <name_file.conf>
